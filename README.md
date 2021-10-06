@@ -1,11 +1,13 @@
 ## INFO 550 Project 
 
-For this project, we will analyze cardiometabolic data from a group of Mexican children aged 11 years using R. The current analysis will run descriptive statistics and analyze patterns of missing data. Note that your version of the analysis will utilize a mock dataset. 
+For this project, we will analyze cardiometabolic data from a group of Mexican children aged 11 years using R. The current analysis will run descriptive statistics and analyze patterns of missing data. Note that your version of the analysis will utilize a mock dataset generated specifically for this course. 
 
 ### 1. Set up
 
-To analyze the data, you will need to install a few `R` packages. The required packages can be installed using the following R code: 
+To analyze the data, you will need to have R installed and install a few `R` packages. 
 
+
+Open an R session in your terminal by typing R and hitting enter. The required packages can be installed using the following R code: 
 
 ```{r}
 
@@ -14,6 +16,7 @@ new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"
 if(length(new.packages)) install.packages(new.packages)
 
 ```
+Quit R using the command q().
 
 ### 2. Run the analysis 
 
