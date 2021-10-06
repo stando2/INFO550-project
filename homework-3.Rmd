@@ -5,22 +5,23 @@ date: "`r format(Sys.Date(), '%Y-%m-%d')`"
 output: bookdown::html_document2
 ---
 
-````{r, set-environment, include = FALSE}
+```{r, set-environment, include = FALSE}
 #load packages 
 lapply(c("haven", "ggplot2", "tidyverse", "VIM", "compareGroups", "Hmisc", "bookdown", "knitr"), library, character.only=TRUE)
 
 #load data 
 cmh <- read.csv("class-project-data.csv")
+
 ```
 # View data 
 
-```` {r, view-data, echo = FALSE, message = FALSE, warning = FALSE}
+```{r, view-data, echo = FALSE, message = FALSE, warning = FALSE}
 
 glimpse(cmh)
 ```
 There are `r nrow(cmh)` observations in the dataset, with `r ncol(cmh)` features measured on each. 
 
-````{r, data-cleaning, include = FALSE, message = FALSE}
+```{r, data-cleaning, include = FALSE, message = FALSE}
 # remove redundant features, rename variables, convert sex to factor
 cmh <- cmh %>% 
 	select(-X, -FM_perc_11y, -FM_kg_11y, -FM_kg_11y_new, -FFM_perc_11y_new, -FFM_kg_11y_new) %>%
@@ -64,7 +65,7 @@ As shown in Table \@ref(tab:summary-statistics), some features have missing data
 
 # Descriptive statistics stratified by sex
 
-````{r, stratified-table, echo = FALSE}
+```{r, stratified-table, echo = FALSE}
 table2 <- compareGroups(sex ~ adiponec_11y + leptin_11y + il6_11y + insulin_11y + glucose_11y + cholester_11y + hdl_11y + tgs_11y + ldl_11y + sum_skin_11y + crp_11y + sbp_11y + dbp_11y + weight_kg + fm_perc_11y, data=cmh_factors)
 
 table2_output <- createTable(table2)
@@ -75,7 +76,7 @@ export2md(table2_output)
 
 # Patterns of missing data 
 
-````{r, missing-data, echo = FALSE, warning = FALSE, message = FALSE}
+```{r, missing-data, echo = FALSE, warning = FALSE, message = FALSE}
 aggr_plot <- aggr(cmh_factors, col=c('navyblue','red'), numbers=TRUE, sortVars=TRUE, labels=names(cmh), cex.axis=.7, gap=3, ylab=c("Histogram of missing data","Pattern"))
 aggr_plot
 
