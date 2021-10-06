@@ -1,6 +1,6 @@
 ## INFO 550 Project 
 
-For this project, we will analyze cardiometabolic data from a group of children aged 11 years. The current analysis will run descriptive statistics and analyze patterns of missing data. 
+For this project, we will analyze cardiometabolic data from a group of Mexican children aged 11 years using R. The current analysis will run descriptive statistics and analyze patterns of missing data. Note that your version of the analysis will utilize a mock dataset. 
 
 ### 1. Set up
 
@@ -17,7 +17,7 @@ if(length(new.packages)) install.packages(new.packages)
 
 ### 2. Run the analysis 
 
-To run the analysis, run the following command in your terminal: 
+To run the analysis and generate the results report, run the following command in your terminal: 
 
 ```{r}
 
@@ -25,4 +25,4 @@ Rscript -e "rmarkdown::render('homework-3.Rmd')"
 
 ```
 
-This will create a file called `homework-3.html`. You can view the results in your browser. 
+This will create a file called `homework-3.html`. You can open the html file in your browser to view results. 
